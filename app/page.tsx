@@ -78,6 +78,7 @@ export default function Home() {
         setTokenExpiry(expiryDate);
       }
     }
+    console.log("credits = ", credits);
   }, []);
 
   const handleLogin = async () => {
@@ -238,7 +239,7 @@ export default function Home() {
   };
 
   const updateName = async () => {
-    const { ok, data } = await makeApiCall("/api/user", {
+    const { ok } = await makeApiCall("/api/user", {
       method: "PATCH",
       body: JSON.stringify({ name: newName }),
     });
