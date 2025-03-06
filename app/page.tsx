@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -11,7 +12,6 @@ import {
   Copy,
   CreditCard,
   Edit3,
-  Key,
   RefreshCw,
   Shield,
   User,
@@ -258,17 +258,18 @@ export default function Home() {
     <main className="min-h-screen bg-gray-50">
       {!authData ? (
         <div className="h-screen flex items-center justify-center">
-          <div className="bg-white p-8 rounded-xl shadow-lg w-96">
-            <h1 className="text-2xl font-bold text-center mb-8 text-gray-900">
-              OAuth API Test Client
-            </h1>
+          <div className="p-8 rounded-xl w-fit">
             <button
               onClick={handleLogin}
               disabled={isLoading}
-              className="w-full bg-black text-white py-3 px-4 rounded-xl hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 transition-colors duration-200 flex items-center justify-center gap-3"
+              className="w-full bg-black text-white py-3 px-10 rounded-xl hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 disabled:opacity-50 transition-colors duration-200 flex items-center justify-center gap-3"
             >
-              <Key className="w-5 h-5" />
-              {isLoading ? "Authenticating..." : "Connect to API"}
+              <img
+                src="/logo/white.png"
+                alt="cosmos"
+                className="w-5 h-5 object-contain"
+              />
+              {isLoading ? "Authenticating..." : "Cosmos connect"}
             </button>
           </div>
         </div>
